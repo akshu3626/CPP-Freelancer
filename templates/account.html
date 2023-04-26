@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div class="container mt-5">
+    
+    {% if user.is_authenticated %}
+    <p>Welcome, {{ user.first_name  }} {{ user.role  }} {{ user.last_name  }} . Thanks for logging in.</p>
+{% else %}
+    <p>Welcome. Please <a href="{% url 'login' %}">Log in.</a> to view this section </p>
+{% endif %}
+
+    <p><a href="{% url 'addpost' %}">Add Post</a></p>
+    <p><a href="{% url 'allpost' %}">View All Post</a></p>
+    
+    
+    
+</div>
+
+
+{% endblock %}
