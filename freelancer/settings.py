@@ -138,6 +138,13 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static/"),
 )
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+AWS_ACCESS_KEY_ID = 'YOUR_ACCESS_KEY_HERE'
+AWS_SECRET_ACCESS_KEY = 'YOUR_SECRET_ACCESS_KEY_HERE'
+
+
 AUTH_USER_MODEL = 'account.User'
 
 

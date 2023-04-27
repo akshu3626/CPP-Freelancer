@@ -11,23 +11,23 @@
     <form method="POST" class="post-form" enctype="multipart/form-data">  
         {% csrf_token %}  
         <div class="input-group mb-3">
-          <input type="text" required="required" class="form-control" placeholder="Title" name="post_title">
+          <input type="text" required="required" class="form-control" placeholder="Title" name="post_title" value="{{posts.post_title}}">
         </div>
         
         <div class="input-group mb-3">
-          <input type="number" required="required" class="form-control" placeholder="Bid Amount" name="bidamount">
+          <input type="number" required="required" class="form-control" placeholder="Bid Amount" name="bidamount" value="{{posts.bidamount}}">
         </div>
         
         
         <div class="input-group mb-3">
-          <input type="text" required="required" class="form-control" placeholder="Please add tag using common for example (HTML5 , CSS3)" name="tags">
+          <input type="text" required="required" class="form-control" placeholder="Please add tag using common for example (HTML5 , CSS3)" name="tags" value="{{posts.tags}}">
         </div>
         
         
         <div class="input-group mb-3">
          <div class="form-floating">
-              <textarea required="required" class="form-control" placeholder="Content" name="post_content" style="height: 100px"></textarea>
-              <label for="floatingTextarea2">Content..</label>
+              <textarea required="required" class="form-control" placeholder="Content" name="post_content" value="{{posts.content}}" style="height: 100px"></textarea>
+              <label for="floatingTextarea2">{{posts.content}}</label>
           </div>
         </div>
         

@@ -10,7 +10,7 @@ class AddpostModel(models.Model):
     user_role=models.CharField(max_length=100)
     tags=models.CharField(max_length=100 , null=True)
     bidamount=models.CharField(max_length=100 , null=True)
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user_id')
+    user_id = models.CharField(max_length=100 , null=True)
 
     class Meta:
         verbose_name_plural = 'Client Post'

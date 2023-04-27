@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+<div class="container mt-5">
+    
+      {% include 'message.html' %}
+
+   {{posts.post_title}}
+   {{posts.tags}}
+   {{posts.bidamount}}
+   {{posts.user_id}}
+   {{current_user.id}}
+
+    {% if posts.user_id == current_user.id %}
+      <h4>number1 is greater than number2</h4>
+      {% else %}
+      test
+    {% endif %}
+    
+</div>
+
+
+{% endblock %}

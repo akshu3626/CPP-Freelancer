@@ -3,7 +3,7 @@
 {% block content %}
 
  <div class="container mt-5 allpost-client">
-   
+    {% include 'message.html' %}
    <div class="row">
       {% for post in Allposts %}
      <div class="col-md-3 mb-5 ">
@@ -12,7 +12,9 @@
             <h3>{{post.post_title}}</h3>
             <h3>{{post.id}}</h3>
               <p>{{post.post_content | truncatechars:90 }}</p>
-              <a href="#" class="btn btn-outline-success"> View Post</a>
+              <a href="detail/{{post.id}}" class="btn btn-outline-success"> View Post</a>
+              <a href="delete/{{post.id}}" class="btn btn-outline-danger"> Delete</a>
+              <a href="update/{{post.id}}" class="btn btn-outline-primary"> Update</a>
              
           
        
