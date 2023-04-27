@@ -11,6 +11,7 @@ class AddpostModel(models.Model):
     tags=models.CharField(max_length=100 , null=True)
     bidamount=models.CharField(max_length=100 , null=True)
     user_id = models.CharField(max_length=100 , null=True)
+    tech = models.CharField(max_length=100 , null=True)
 
     class Meta:
         verbose_name_plural = 'Client Post'

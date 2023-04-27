@@ -23,6 +23,7 @@ def AddPost(request):
                 post_content = request.POST.get("post_content")
                 tags = request.POST.get("tags")
                 bidamount = request.POST.get("bidamount")
+                tech = request.POST.get('tech')
                 user_role = request.POST.get("user_role")
                 user_id = 1
                 data = {
@@ -33,15 +34,15 @@ def AddPost(request):
                     'bidamount' : bidamount,
                     'user_id' : user_id,
                 }
-                addpost = AddpostModel(post_title=post_title, post_content=post_content, user_role=user_role, user_id=user_id , tags=tags , bidamount=bidamount)
+                addpost = AddpostModel(post_title=post_title, post_content=post_content, user_role=user_role, user_id=user_id , tags=tags , bidamount=bidamount,tech=tech,)
                 subject = post_title + " " + 'New Post Added'
-                print(subject)
+                # print(subject)
                 message = post_title
                 email_from = settings.EMAIL_HOST_USER
                 recipient_list = ['akshujoshi41@gmail.com',]
                 # send_mail( subject, message, email_from, recipient_list )
-                addpost.save()
-                print(data)
+                test = addpost.save()
+                print(addpost)
                 messages.success(request, "Post Added")
         return render(request, 'clientpost.html' , {'current_user': current_user})
     else:
@@ -53,12 +54,8 @@ def allpost(request):
         return render(request, 'viewpost.html' , {'Allposts' : Allposts})
 
 def postdetails(request,id):
-    if request.user.is_authenticated and request.user.role == "Client":
-        current_user = request.user
-        posts=AddpostModel.objects.get(id=id)
-        post_user_id = posts.user_id
-        user_id = request.user.role 
-        return render(request, 'details.html' , {'posts' : posts , 'current_user': current_user})
+    posts=AddpostModel.objects.get(id=id) 
+    return render(request, 'details.html' , {'posts' : posts})
 
 
 def postupdate(request,id):
