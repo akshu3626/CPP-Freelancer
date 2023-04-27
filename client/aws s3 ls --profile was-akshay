@@ -1,0 +1,13 @@
+aws s3 ls --profile was-akshay
+
+aws s3 ls --profile was-akshay
+
+
+freelancerbucket_1682566063756
+
+
+
+sp=racwdli&st=2023-04-27T03:32:54Z&se=2024-05-10T11:32:54Z&sv=2021-12-02&sr=c&sig=vcYZdWSmpL2yAdUt8bhBn3rAyBFrZc5qmO7754CkXDA%3D
+
+
+https://freelancerbucket.blob.core.windows.net/freelancer?sp=racwdli&st=2023-04-27T03:32:54Z&se=2024-05-10T11:32:54Z&sv=2021-12-02&sr=c&sig=vcYZdWSmpL2yAdUt8bhBn3rAyBFrZc5qmO7754CkXDA%3D

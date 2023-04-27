@@ -3,6 +3,8 @@ from django.contrib.auth import login, authenticate , logout
 from django.contrib import messages
 from .models import AddpostModel
 from account.models import User
+from django.core.mail import send_mail
+from django.conf import settings
 import boto3
 
 
@@ -32,6 +34,12 @@ def AddPost(request):
                     'user_id' : user_id,
                 }
                 addpost = AddpostModel(post_title=post_title, post_content=post_content, user_role=user_role, user_id=user_id , tags=tags , bidamount=bidamount)
+                subject = post_title + " " + 'New Post Added'
+                print(subject)
+                message = post_title
+                email_from = settings.EMAIL_HOST_USER
+                recipient_list = ['akshujoshi41@gmail.com',]
+                # send_mail( subject, message, email_from, recipient_list )
                 addpost.save()
                 print(data)
                 messages.success(request, "Post Added")

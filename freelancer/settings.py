@@ -144,6 +144,12 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 AWS_ACCESS_KEY_ID = 'YOUR_ACCESS_KEY_HERE'
 AWS_SECRET_ACCESS_KEY = 'YOUR_SECRET_ACCESS_KEY_HERE'
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp-relay.sendinblue.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'akshu3626@gmail.com'
+EMAIL_HOST_PASSWORD = 'AhYnOPpC458d6D27'
 
 AUTH_USER_MODEL = 'account.User'
 
