@@ -3,20 +3,42 @@
 {% block content %}
 
 
-<div class="container mt-5">
-    
-    {% if user.is_authenticated %}
-    <p>Welcome, {{ user.first_name  }} {{ user.role  }} {{ user.last_name  }} . Thanks for logging in.</p>
-{% else %}
-    <p>Welcome. Please <a href="{% url 'login' %}">Log in.</a> to view this section </p>
-{% endif %}
+<div class="index1-listing-slider-wrapper float_left">
+               <div class="container">
+                  <div class="slider-text text-center">
+                     <h4>Hey {{ user.first_name  }} {{ user.last_name  }} </h4>
+                  </div>
+               </div>
+            </div>
 
-    <p><a href="{% url 'addpost' %}">Add Post</a></p>
-    <p><a href="{% url 'allpost' %}">View All Post</a></p>
-    
-    
-    
-</div>
+
+<div class="freelauncer-main-wrapper float_left ptb-100">
+               <div class="container">
+                  <div class="home1-section-heading1">
+                     <h4>Profile</h4>
+                  </div>
+                  <div class="freelauncer-profile float_left">
+                     <div class="profile-img">
+                        <img src="https://freelancerbucket.blob.core.windows.net/images/profile5.png" alt="profie">
+                     </div>
+                     <div class="profile-text ps-rel">
+                        <a href="freelancer-listing-left-sidebar.html"><h6>{{ user.first_name  }} {{ user.last_name  }}</h6></a>
+                        <a href="freelancer-listing-left-sidebar.html"><span>{{ user.role  }} </span></a><br>
+                        <a href="freelancer-listing-left-sidebar.html"><span>{{ user.email  }} </span></a>
+                        
+                        <div class="rating-sec">
+                           
+                           <div class="rating-btn">
+                              <a class="btn1" href="{% url 'addpost' %}">Add Post</a>
+                              <a href="{% url 'allpost' %}">View All Post</a>
+                           </div>
+                           
+                        </div>
+                     </div>
+                  </div>
+                  <!--  -->
+               </div>
+            </div>
 
 
 {% endblock %}
