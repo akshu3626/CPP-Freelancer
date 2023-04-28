@@ -6,8 +6,10 @@
 
 <div class="container mt-5">
     
+    <div class="main-content">
       {% include 'message.html' %}
 
+   
    {{posts.post_title}}
    {{posts.tags}}
    {{posts.bidamount}}
@@ -19,7 +21,48 @@
       {% else %}
       test
     {% endif %}
-    
+   </div> 
+
+   <div class="form-libaray">
+    {% if data %}
+      {{data.converted}}
+    {% endif %}
+    <form method="POST" class="post-form" enctype="multipart/form-data">  
+        {% csrf_token %}  
+         <div class="input-group mb-3">
+          <input type="text" required="required" class="form-control" placeholder="Amount" name="amount" >
+         </div>
+        <div class="input-group mb-3">
+          <select class="form-select" name="from" aria-label="Default select example">
+              <option selected>From</option>
+              <option value="INR">INR</option>
+              <option value="EUR">EUR</option>
+              <option value="JPY">JPY</option>
+              <option value="BGN">BGN</option>
+              <option value="PHP">PHP</option>
+              <option value="SGD">SGD</option>
+              <option value="THB">THB</option>
+              <option value="ZAR">ZAR</option>
+            </select>
+        </div>
+        
+        <div class="input-group mb-3">
+          <select class="form-select" name="to" aria-label="Default select example">
+              <option selected>To</option>
+              <option value="INR">INR</option>
+              <option value="EUR">EUR</option>
+              <option value="JPY">JPY</option>
+              <option value="BGN">BGN</option>
+              <option value="PHP">PHP</option>
+              <option value="SGD">SGD</option>
+              <option value="THB">THB</option>
+              <option value="ZAR">ZAR</option>
+            </select>
+        </div>
+
+        <input type="submit" class="btn btn-outline-success " name="Check">
+    </form>
+   </div>
 </div>
 
 

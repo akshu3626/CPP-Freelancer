@@ -5,3 +5,4 @@ sqlparse==0.4.3
 typing_extensions==4.5.0
 pymysql
 boto3
+Aksconverter

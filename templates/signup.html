@@ -2,8 +2,127 @@
 
 {% block content %}
 
-    
- <div class="content">
+
+<style>
+  
+  .signin-wrapper {
+    margin-top: 10%;
+}
+select#id_role {
+    width: 100%;
+    height: 50px;
+    border: 1px solid #eaf2f7;
+    border-radius: 30px;
+    background: #eaf2f7;
+    padding: 0px 45px;
+}
+</style>
+<section>
+  <div class="login_box_main_wrapper" id="login_height" style="height: 1200px;">
+            <div class="container">
+               
+               <div class="signin-wrapper">
+                  <div class="row">
+                     <div class="col-lg-6 col-md-6 col-12">
+                        <div class="left-side">
+                           <h4>Register</h4>
+                            <span class="mb-0 text-danger">
+                {% if msg %}
+                    {{ msg | safe }}
+                {% else %}
+                    Login page
+                {% endif %}
+              </span>
+                           <form method="post">
+                             {% csrf_token %}
+                             <label class="ml-3" for="username">Username</label>
+                              <div class="form-group field-icon row">
+                                 
+                                 <div class="col-md-12">
+                                   {{ form.username }}
+                                    <span><i class="fa fa-user" aria-hidden="true"></i></span>
+                                 </div>
+                              </div>
+                            
+                              <label class="ml-3" for="username">First name</label>
+                              <div class="form-group field-icon row">
+                                 <div class="col-md-12">
+                          
+                                    {{ form.first_name }}
+                                    <span><i class="fa fa-user" aria-hidden="true"></i></span>
+                                 </div>
+                              </div>
+
+                              <label class="ml-3"  for="username">Last name</label>
+                              <div class="form-group field-icon row">
+                                 <div class="col-md-12">
+                                  
+                                    {{ form.last_name }}
+                                    <span><i class="fa fa-user" aria-hidden="true"></i></span>
+                                 </div>
+                              </div>
+
+                              <label class="ml-3"  for="username">Email</label>
+                              <div class="form-group field-icon row">
+                                 <div class="col-md-12">
+                                    {{ form.email}}
+                                    <span><i class="fa fa-unlock-alt" aria-hidden="true"></i></span>
+                                 </div>
+                              </div>
+
+                               <label class="ml-3" for="username">Password</label>
+                              <div class="form-group field-icon row">
+                                 <div class="col-md-12">
+                                     {{ form.password1 }}
+                                    <span><i class="fa fa-unlock-alt" aria-hidden="true"></i></span>
+                                 </div>
+                              </div>
+
+                              <label class="ml-3" for="username"> Confrom Password</label>
+                              <div class="form-group field-icon row">
+                                 <div class="col-md-12">
+                                
+                                     {{ form.password2 }}
+                                    <span><i class="fa fa-unlock-alt" aria-hidden="true"></i></span>
+                                 </div>
+                              </div>
+
+                              <label for="username">Select Role</label>
+                              <div class="form-group field-icon row">
+                                 
+                                 <div class="col-md-12">
+                                  
+                                     {{ form.role }}
+                                    <span><i class="fa fa-unlock-alt" aria-hidden="true"></i></span>
+                                 </div>
+                              </div>
+                              
+                               <span class="text-error">{{ form.errors }}</span>
+                            
+                              <div class="login-btn-sec">
+                                <input type="submit"  value="Sign up" class="sub-btn">
+                                 
+                            
+                              </div>
+                           </form>
+                       </div>
+                     </div>
+                     <div class="col-lg-6 col-md-6 col-12">
+                        <div class="login-img">
+                           <img src="https://freelancerbucket.blob.core.windows.net/images/login-side.png" alt="img">
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+          </div>
+
+</section>
+
+
+
+
+ <div class="content d-none">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-md-6 contents">
@@ -61,7 +180,7 @@
                       <div class="control__indicator"></div>
                     </label>
                   </div>
-                    <span class="text-error">{{ form.errors }}</span>
+                   
                   <input type="submit"  value="Register" class="btn btn-pill text-white btn-block btn-primary">
                 </form>
               </div>

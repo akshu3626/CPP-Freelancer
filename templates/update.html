@@ -2,6 +2,84 @@
 
 
 {% block content %}
+<style>
+  .inner-page-main-wrapper.float_left {
+    background: #f3f5fc;
+}
+</style>
+<div class="index1-listing-slider-wrapper float_left">
+               <div class="container">
+                  <div class="slider-text text-center">
+                     <h4>Post Job</h4>
+                  </div>
+               </div>
+            </div>
+
+
+<div class="inner-page-main-wrapper float_left " style="margin-top: 0px;">
+               <div class="container mt-5">
+                  <div class="home1-section-heading1">
+                     <h6>Post Job</h6>
+                     <h4>New Job Offer</h4>
+                     <p>Add a new job to your company's jobs list.</p>
+                  </div>
+                  <div class="pt-5">
+                     {% include 'message.html' %}
+                  </div>
+
+                  <div class="post-project-main-wrapper float_left">
+                     <div class="row">
+                     
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                           <div class="post-form-wrapper float_left">
+                                 <form method="POST" class="post-form" enctype="multipart/form-data"> 
+                                  {% csrf_token %}  
+                                 <div class="form-group row">
+                                    <div class="col-md-6 col-12">
+                                       <label>Job title</label>
+                                       <input type="text" required="required" placeholder="Title" name="post_title" value="{{posts.post_title}}">
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                       <label>Cost</label>
+                                        <input type="text" required="required" placeholder="Bid Amount" name="bidamount" value="{{posts.bidamount}}">
+                                    </div>
+                                 </div>  
+
+                                 <div class="form-group row">
+                                    <div class="col-md-6 col-12">
+                                       <label>Tags</label>
+                                        <input type="text" required="required" placeholder="Please add tag using common for example (HTML5 , CSS3)" name="tags" value="{{posts.tags}}">
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                       <label>Development Type</label>
+                                         <input type="text" required="required" placeholder="Please add tag using common for example (HTML5 , CSS3)" name="tags" value="{{posts.tech}}">
+                                    </div>
+                                 </div>  
+
+
+                                 <div class="form-group row">
+                                    <div class="col-md-12 col-12">
+                                       <label>Job description</label>
+                                       <textarea rows="4" cols="50" placeholder="Describe your project here..." value="{{posts.post_content}}" >{{posts.post_content}}</textarea>
+                                    </div>
+                                 </div>
+                                  <input type="submit" class="custom-btn btn" value="Update Job"/>
+                              </form>
+                              
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+
+
+
+
+
+
+
 
 
 <div class="container mt-5">
@@ -11,29 +89,16 @@
     <form method="POST" class="post-form" enctype="multipart/form-data">  
         {% csrf_token %}  
         <div class="input-group mb-3">
-          <input type="text" required="required" class="form-control" placeholder="Title" name="post_title" value="{{posts.post_title}}">
-        </div>
-        
-        <div class="input-group mb-3">
-          <input type="text" required="required" class="form-control" placeholder="Bid Amount" name="bidamount" value="{{posts.bidamount}}">
-        </div>
-        
-        
-        <div class="input-group mb-3">
-          <input type="text" required="required" class="form-control" placeholder="Please add tag using common for example (HTML5 , CSS3)" name="tags" value="{{posts.tags}}">
-        </div>
-        
-        
-        <div class="input-group mb-3">
-         <div class="form-floating">
-              <textarea required="required" class="form-control" placeholder="Content" name="post_content" value="{{posts.content}}" style="height: 100px"></textarea>
-              <label for="floatingTextarea2">{{posts.content}}</label>
-          </div>
-        </div>
-        
+          <input type="text" required="required" placeholder="Title" name="post_title" value="{{posts.post_title}}">
+
+          <input type="text" required="required" placeholder="Bid Amount" name="bidamount" value="{{posts.bidamount}}">
+
+          <input type="text" required="required" placeholder="Please add tag using common for example (HTML5 , CSS3)" name="tags" value="{{posts.tags}}">
+
+          <textarea required="required" placeholder="Content" name="post_content" value="{{posts.content}}" style="height: 100px"></textarea>
+
         <input type="hidden" name="user_role" value="{{ current_user.role }}"/>
         <input type="hidden" name="user_id" value="{{ current_user.id }}"/>
-        
         <input type="submit" class="btn btn-outline-success" value="Submit"/>
     </form>
     

@@ -3,56 +3,68 @@
 {% block content %}
 
 
-<div class="content">
-    <div class="container">
-      <div class="row justify-content-center">
-        <!-- <div class="col-md-6 order-md-2">
-          <img src="images/undraw_file_sync_ot38.svg" alt="Image" class="img-fluid">
-        </div> -->
-        <div class="col-md-6 contents">
-          <div class="row justify-content-center">
-            <div class="col-md-12">
-              <div class="form-block">
-                  <div class="mb-4">
-                </div>
+<style>
+  
+  .signin-wrapper {
+    margin-top: 10%;
+}
+</style>
 
-              <span class="mb-0 text-muted">
+<section>
+  <div class="login_box_main_wrapper" id="login_height" style="height: 800px;">
+            <div class="container">
+               
+               <div class="signin-wrapper">
+                  <div class="row">
+                     <div class="col-lg-6 col-md-6 col-12">
+                        <div class="left-side">
+                           <h4>Sign In</h4>
+                            <span class="mb-0 text-danger">
                 {% if msg %}
                     {{ msg | safe }}
                 {% else %}
-                    Login page
+                    
                 {% endif %}
               </span>
-                <form  method="post">
-                    {% csrf_token %}
-                  <div class="form-group first">
-                    <label for="username">Username</label>
-                      {{ form.username }}
+                           <form method="post">
+                             {% csrf_token %}
+                              <label class="ml-3" for="username">Username</label>
+                              <div class="form-group field-icon row">
+                                 <div class="col-md-12">
+                                   {{ form.username }}
+                                    <span><i class="fa fa-user" aria-hidden="true"></i></span>
+                                 </div>
+                              </div>
+                               <label class="ml-3" for="username">Password</label>
+                              <div class="form-group field-icon row">
+                                 <div class="col-md-12">
+                                    {{ form.password }}
+                                    <span><i class="fa fa-unlock-alt" aria-hidden="true"></i></span>
+                                 </div>
+                              </div>
+                              
+                            
+                              <div class="login-btn-sec">
+                                <input type="submit" value="Log In" class="sub-btn">
+                                 
+                                 
+                                 <p>Do have an account? <a href="{% url 'signup' %}">Sign Up now!</a></p>
+                              </div>
+                           </form>
+                       </div>
+                     </div>
+                     <div class="col-lg-6 col-md-6 col-12">
+                        <div class="login-img">
+                           <img src="https://freelancerbucket.blob.core.windows.net/images/login-side.png" alt="img">
+                        </div>
+                     </div>
                   </div>
-                  <div class="form-group last mb-4">
-                    <label for="username">Password</label>
-                    {{ form.password }}
-                  </div>
-
-                  <div class="d-flex mb-5 align-items-center">
-                    <label class="control control--checkbox mb-0"><span class="caption">Remember me</span>
-                      <input type="checkbox" checked="checked"/>
-                      <div class="control__indicator"></div>
-                    </label>
-                    <span class="ml-auto"><a href="#" class="forgot-pass">Forgot Password</a></span>
-                  </div>
-
-                  <input type="submit" value="Log In" class="btn btn-pill text-white btn-block btn-primary">
-                </form>
-              </div>
+               </div>
             </div>
           </div>
 
-        </div>
-
-      </div>
-    </div>
-  </div>
+</section>
+<!-- \ -->
     
 
 {% endblock %}

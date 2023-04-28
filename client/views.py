@@ -5,7 +5,13 @@ from .models import AddpostModel
 from account.models import User
 from django.core.mail import send_mail
 from django.conf import settings
+from aksconverter_properties_pkg import aksconverter_properties
 import boto3
+import requests
+import json
+from datetime import datetime
+
+
 
 
 def AddPost(request):
@@ -44,6 +50,7 @@ def AddPost(request):
                 test = addpost.save()
                 print(addpost)
                 messages.success(request, "Post Added")
+
         return render(request, 'clientpost.html' , {'current_user': current_user})
     else:
        return redirect('index')
@@ -54,8 +61,28 @@ def allpost(request):
         return render(request, 'viewpost.html' , {'Allposts' : Allposts})
 
 def postdetails(request,id):
-    posts=AddpostModel.objects.get(id=id) 
-    return render(request, 'details.html' , {'posts' : posts})
+    posts=AddpostModel.objects.get(id=id)
+    if request.method == 'POST':
+        base = request.POST.get("from")
+        to = request.POST.get("to")
+        amount = request.POST.get("amount")
+        con = aksconverter_properties.aksconverter(base , to , amount )
+        b = json.loads(con)
+        base1 = b['base']
+        to1 = b['to']
+        amount1 = b['amount']
+        converted = b['converted']
+        current_rate = b['rate']
+        last_update = b['lastUpdate']
+        # x = dt_obj = datetime.fromtimestamp(last_update)
+        data = {
+            'base1': base1,
+            'to1': to1,
+            'amount1' : amount1,
+            'converted' : converted,
+            'current_rate' : current_rate,
+                    }
+    return render(request, 'details.html' , {'posts' : posts })
 
 
 def postupdate(request,id):

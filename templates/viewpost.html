@@ -2,29 +2,102 @@
 
 {% block content %}
 
- <div class="container mt-5 allpost-client">
-    {% include 'message.html' %}
-   <div class="row">
-      {% for post in Allposts %}
-     <div class="col-md-3 mb-5 ">
-      
-        
-            <h3>{{post.post_title}}</h3>
-            <h3>{{post.id}}</h3>
-              <p>{{post.post_content | truncatechars:90 }}</p>
-              <a href="detail/{{post.id}}" class="btn btn-outline-success"> View Post</a>
-              <a href="delete/{{post.id}}" class="btn btn-outline-danger"> Delete</a>
-              <a href="update/{{post.id}}" class="btn btn-outline-primary"> Update</a>
-             
-          
-       
-       
-     </div>
-      {% endfor %}
-   </div>
-       
-        
-      </div>
-      
+<style>
+  .inner-page-main-wrapper.float_left {
+    background: #f3f5fc;
+}
+</style>
+<div class="index1-listing-slider-wrapper float_left">
+               <div class="container">
+                  <div class="slider-text text-center">
+                     <h4>You Job Posts</h4>
+                  </div>
+               </div>
+            </div>
+<div class="inner-page-main-wrapper float_left" style="margin-top: 0px;">
+  <div class="container">
+  {% include 'message.html' %}
+</div>
+               <div class="container mt-5">
+                
+                  <div class="row">
+                     {% for post in Allposts %}
+                     <div class="col-lg-12 col-md-12 col-sm-12 col-12 ">
+                         <div class="freelauncer-profile float_left">
+                           <div class="profile-img">
+                              <img src="https://freelancerbucket.blob.core.windows.net/images/drive4.png" alt="profie">
+                           </div>
+                           <div class="profile-text ps-rel">
+                              <a href="jobs-details.html"><h6>{{post.post_title}}</h6></a>
+                              <a href="jobs-details.html"><small>{{post.tech}} <i class="fa fa-check" aria-hidden="true"></i></small></a>
+                              <div class="rating-sec">
+                                 
+                              </div>
+                              <div class="pro-add">
+                                 <ul>
+                                    <li> <span></i></span> {{post.bidamount}}</li>
+                                 </ul>
+                              </div>
+                           </div>
+                           <div class="pro-text">
+                              <p>{{post.post_content}}</p>
+                           </div>
+                           <div class="skill">
+                              <div class="skill-text">
+                                 <p>Skills</p>
+                                 <a href="javascript:;">{{post.tags}}</a>
+                              </div>
+
+                              <div class="btn-area">
+                                <a href="delete/{{post.id}}" class="apply-btn btn" hre style="background: red; border:red;"><span>Delete</span></a>
+                                <a href="update/{{post.id}}" class="apply-btn btn"><span>Update</span></a>
+                              </div>
+                              
+                              
+                           </div>
+                        </div>
+                        <!--  -->
+                        
+                     </div>
+
+
+                     
+
+                     {% endfor %}
+                     
+
+
+
+
+
+                  </div>
+               </div>
+            </div>
+
+
+            <!-- modal apply now -->
+
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered apply-job-modal">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Apply Now</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="content-box">
+                       <span>To apply for this job <strong>email your details to</strong></span>
+                       <a href="javascript:;"><span class="__cf_email__" data-cfemail="cdaca9a0a4a38daaa0aca4a1e3aea2a0">[email&#160;protected]</span></a>
+                       <p>You can apply to this job and others using your online resume. Click the link below to submit your online resume and email your application to this employer.</p>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Submit Resume & Apply</button>
+                    <!-- <button type="button" class="btn btn-primary">Understood</button> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+ 
       
 {% endblock %}

@@ -3,134 +3,125 @@
 
 {% block content %}
 
-
-   <section class="banner">
-      <div class="container">
-        
-        <div class="banner-content">
-          <div class="banner-text">
-            <h1>Find the perfect freelance services for your business</h1>
-            <p>Work with talented people at the most affordable price to get the most out of your time and cost</p>
-          </div>
-            <div class="banner-search">
-              <div class="search-inner">
-                <form method="post" action="" class="search-form">
-                  <input placeholder="What are you looking for?" type="text" name="keyword" class="form-control" >
-                  <select class="form-select" aria-label="Default select example">
-                      <option selected>Open this select menu</option>
-                      <option value="1">One</option>
-                      <option value="2">Two</option>
-                      <option value="3">Three</option>
-                    </select>
-                  <input type="submit" class="btn btn-danger" name="search" value="search">
-                </form>
-              </div>
-          </div>
-
-          
-          
-        </div>
-
-      </div>
-      
-    </section>
-
-
-    <section class="home-second mt-5">
-      
-      <div class="container">
-        <h2 class="sec-title">Need something done?</h2>
-        <p class="sec-subtitle">Most viewed and all-time top-selling services</p>
-      
-
-      <div class="row">
-        <div class="col-md-3 mt-5 mb-5">
-          <div class="services-blub">
-            <i class="fa-solid fa-image-portrait"></i>
-            <h3 class="mt-2 mb-2">Post a job</h3>
-            <p class="mt-2 mb-2">It’s free and easy to post a job. Simply fill in a title, description.</p>
-          </div>
-        </div>
-
-        <div class="col-md-3 mt-5 mb-5">
-          <div class="services-blub">
-            <i class="fa-solid fa-laptop-code"></i>
-            <h3 class="mt-2 mb-2">Choose freelancers</h3>
-            <p class="mt-2 mb-2">It’s free and easy to post a job. Simply fill in a title, description.</p>
-          </div>
-        </div>
-
-
-        <div class="col-md-3 mt-5 mb-5">
-          <div class="services-blub">
-            <i class="fa-brands fa-cc-apple-pay"></i>
-            <h3 class="mt-2 mb-2">Pay safely</h3>
-            <p class="mt-2 mb-2">It’s free and easy to post a job. Simply fill in a title, description.</p>
-          </div>
-        </div>
-
-
-        <div class="col-md-3 mt-5 mb-5">
-          <div class="services-blub">
-            <i class="fa-solid fa-handshake-angle"></i>
-            <h3 class="mt-2 mb-2">We’re here to help</h3>
-            <p class="mt-2 mb-2">It’s free and easy to post a job. Simply fill in a title, description.</p>
-          </div>
-        </div>
-      </div>
-</div>
-    </section>
-
-
-    <section class="home-third mt-5">
-      
-      <div class="container">
-        <h2 class="sec-title">Browse talent by category</h2>
-        <p class="sec-subtitle">Get some Inspirations from 1800+ skills</p>
-      
-
-      <div id="owl-demo1" class="owl-carousel owl-theme">
-                
-        {% for Allposts in Allposts %}
-        <div class="item">
-          
-          <div class="card" style="width: 18rem;">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="36%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text></svg>
-            <div class="card-body">
-              <h5 class="card-title">{{Allposts.post_title}}</h5>
-              <p class="card-text">{{Allposts.post_content | truncatechars:90}}</p>
-              <a href="detail/{{Allposts.id}}" class="btn btn-primary">View Details</a>
+<section>
+  <div class="index1-slider-wrapper ps-rel">
+            <div class="overlay-slider">
+               <div class="container">
+                  <div class="slider-caption">
+                     <h2>Offering 25,000 Freelancer Job </h2>
+                     <p>The most complete Freelancer portal software having over 70 million unique <br> visitors every day with verified.</p>
+                  </div>
+                  <div class="sldier-contact-form">
+                     <ul>
+                        <li>
+                           <div class="text-field">
+                              <input type="text" placeholder="Search Here"> 
+                           </div>
+                        </li>
+                        <li> <div class="select-field"> 
+                        <select>
+                        <option selected="selected" value="">Select Category</option>
+                        <option value="5-6">Art &amp; Craft</option>
+                        <option value="7-9">Science</option>
+                        <option value="10-13">Maths </option>
+                        <option value="10-13">English </option>
+                        </select> </div>
+                        </li>
+                        <li> 
+                        <div class="select-field"> 
+                        <select>
+                        <option selected="selected" value="">Select Location</option>
+                        <option value="5-6">Art &amp; Craft</option>
+                        <option value="7-9">Science</option>
+                        <option value="10-13">Maths </option>
+                        <option value="10-13">English </option>
+                        </select> 
+                        </div>
+                        </li>
+                        <li class="btn-from">
+                        <a href="javascript:;"><span>Search</span></a>
+                        </li>
+                     </ul>
+                     <ul class="treding-list">
+                     <li> Trending Keyword:</li>
+                     <li> <a href="javascript:;">UI Designer,</a> </li>
+                     <li> <a href="javascript:;">Developer,</a> </li>
+                     <li> <a href="javascript:;">it Company,</a> </li>
+                     <li> <a href="javascript:;">Design,</a> </li>
+                     <li> <a href="javascript:;">Call Center</a> </li>
+                     </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="container">
+               </div>
             </div>
+
+</section>
+
+<section>
+  
+<div class="treding-job-wrapper float_left ptb-100">
+               <div class="container">
+                  <div class="home1-section-heading1">
+                     <h6>New Trending Jobs</h6>
+                     <h4>Most Popular &amp; Trending Jobs</h4>
+                  </div>
+                  <div class="tabFive custom-tab">
+                     <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                           <div role="tabpanel" class="tab-panel">
+                              <!-- Nav tabs -->
+                              
+                              <!-- Tab panes -->
+                              <div class="tab-content">
+                                 <div class="tab-pane fade active show" id="contentFive-1">
+                                    <div class="row">
+
+
+    {% for Allposts in Allposts %}
+       <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+          <div class="trending-main-box float_left">
+             <div class="trending-upper-text ps-rel">
+              
+                <div class="icon-img">
+                   <img src="https://freelancerbucket.blob.core.windows.net/images/drive4.png" alt="img">
+                </div>
+                <a href="jobs-details.html"><h5>{{Allposts.post_title}}</h5></a>
+             </div>
+             <div class="trending-lower-text">
+                <span style="text-transform: capitalize;">{{Allposts.tech}}</span>
+                <a href="javascript:;"> {{Allposts.bidamount}} </a>
+                <p> <span></span> {{Allposts.tags}}</p>
+                <a class="custom-btn" href="detail/{{Allposts.id}}"> <span>View</span> </a>
+             </div>
           </div>
-          
-        </div>
-        {% endfor %}
-       
-        
-      </div>
+       </div>
+       {% endfor %}
+                                       
+                                       
+                                       
+                                       
+                                       
+                                       
+                                       
+                                    </div>
+                                 </div>
+                                 
+                                 
+                                 
+                              </div>
+                           </div>
+                           
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+</section>
+   
 
-      </div>
-
-    </section>
 
 
-     <section class="home-fourth mt-5">
-      
-      <div class="container">
-        <h2 class="sec-title">Highest Rated Freelancers</h2>
-        <p class="sec-subtitle">Lorem ipsum dolor sit amet, consectetur.</p>
-
-        <div id="owl-demo2" class="owl-carousel owl-theme">
-                
-        <div class="item"><img src="assets/owl1.jpg" alt="Owl Image"></div>
-        <div class="item"><img src="assets/owl1.jpg" alt="Owl Image"></div>
-        <div class="item"><img src="assets/owl1.jpg" alt="Owl Image"></div>
-        <div class="item"><img src="assets/owl1.jpg" alt="Owl Image"></div>
-        <div class="item"><img src="assets/owl1.jpg" alt="Owl Image"></div>
-        
-      </div>
-      </div>
-
-    </section>
 
 {% endblock %}
