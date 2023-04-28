@@ -3,31 +3,81 @@
 
 {% block content %}
 
+<style>
+  .form-libaray {
+    margin: 0 auto;
+    padding: 29px 17px;
+}
+</style>
+<div class="index1-listing-slider-wrapper float_left">
+               <div class="container">
+                  <div class="slider-text text-center">
+                     <h4>{{posts.post_title}}</h4>
+                     <ul>
+                        <li>
+                           <a href="javascript:;">Home</a>
+                        </li>
+                        <li>/ Jobs Details</li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+<div class="inner-page-main-wrapper float_left">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="develop_main_wrapper">
+                           <div class="develop-cont">
+                              <h3>
+                                {{posts.post_title}}
+                      
+                              </h3>
+                              <ul>
+                                 <li>
+                                    <span><i class="fa fa-suitcase" aria-hidden="true"></i></span>
+                                   {{posts.tech}}
+                                 </li>
+                                 <li>
+                                    <span><i class="fa fa-dollar-sign"></i></span>
+                                    {{posts.bidamount}}
+                                 </li>
+                                 <li>
+                                    <span><i class="fa fa-suitcase"></i></span>
+                                   {{posts.tags}}
+                                 </li>
+                                 
+                              </ul>
+                           </div>
+                           <div class="bid_button">
+                              <!-- <button class="apply-btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><span>Apply Now</span></button> -->
+                              <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#staticBackdrop"> <span>Apply Now</span> </a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-8 col-md-12 col-sm-12 col-12">
+                        <div class="descript_main_wrapper">
+                           <h4>Jobs Description</h4>
+                           <p>{{posts.post_content}}
+                           </p>   
+                        </div>
+                        
+                       
+                     </div>
+                     <div class="col-lg-4 col-md-12 col-sm-12 col-12">
+                        
 
-<div class="container mt-5">
-    
-    <div class="main-content">
-      {% include 'message.html' %}
-
-   
-   {{posts.post_title}}
-   {{posts.tags}}
-   {{posts.bidamount}}
-   {{posts.user_id}}
-   {{current_user.id}}
-
-    {% if posts.user_id == current_user.id %}
-      <h4>number1 is greater than number2</h4>
-      {% else %}
-      test
-    {% endif %}
-   </div> 
-
-   <div class="form-libaray">
+                       
+                        <div class="descript_main_wrapper pb-0">
+                           <h4>Currency Convter</h4>
+                           <div class="form-libaray">
     {% if data %}
-      {{data.converted}}
+      From: {{data.base1}}<br>
+      To:  {{data.to1}}<br>
+      Amount: {{data.converted}} {{data.to1}}<br>
+      Last Update:{{data.dt_obj}}<br> <br>
+
     {% endif %}
-    <form method="POST" class="post-form" enctype="multipart/form-data">  
+    <form method="POST" class="form-group" enctype="multipart/form-data">  
         {% csrf_token %}  
          <div class="input-group mb-3">
           <input type="text" required="required" class="form-control" placeholder="Amount" name="amount" >
@@ -64,6 +114,14 @@
     </form>
    </div>
 </div>
+                        </div>
+                     
+                        
+                     </div>
+                  </div>
+               </div>
+            </div>
+
 
 
 {% endblock %}

@@ -10,7 +10,7 @@
 <div class="index1-listing-slider-wrapper float_left">
                <div class="container">
                   <div class="slider-text text-center">
-                     <h4>Post Job</h4>
+                     <h4>Update Job</h4>
                   </div>
                </div>
             </div>
@@ -60,7 +60,7 @@
                                  <div class="form-group row">
                                     <div class="col-md-12 col-12">
                                        <label>Job description</label>
-                                       <textarea rows="4" cols="50" placeholder="Describe your project here..." value="{{posts.post_content}}" >{{posts.post_content}}</textarea>
+                                       <textarea rows="4" cols="50" placeholder="Describe your project here..." name="post_content" value="{{posts.post_content}}" >{{posts.post_content}}</textarea>
                                     </div>
                                  </div>
                                   <input type="submit" class="custom-btn btn" value="Update Job"/>
@@ -82,7 +82,7 @@
 
 
 
-<div class="container mt-5">
+<!-- <div class="container mt-5">
     
       {% include 'message.html' %}
 
@@ -103,6 +103,6 @@
     </form>
     
 </div>
-
+ -->
 
 {% endblock %}

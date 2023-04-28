@@ -46,7 +46,7 @@ def AddPost(request):
                 message = post_title
                 email_from = settings.EMAIL_HOST_USER
                 recipient_list = ['akshujoshi41@gmail.com',]
-                # send_mail( subject, message, email_from, recipient_list )
+                send_mail( subject, message, email_from, recipient_list )
                 test = addpost.save()
                 print(addpost)
                 messages.success(request, "Post Added")
@@ -74,14 +74,17 @@ def postdetails(request,id):
         converted = b['converted']
         current_rate = b['rate']
         last_update = b['lastUpdate']
-        # x = dt_obj = datetime.fromtimestamp(last_update)
+        dt_obj = datetime.fromtimestamp(last_update)
         data = {
             'base1': base1,
             'to1': to1,
             'amount1' : amount1,
             'converted' : converted,
             'current_rate' : current_rate,
+            'dt_obj' : dt_obj
                     }
+        print(data)
+        return render(request, 'details.html' , {'posts' : posts , 'data' : data })
     return render(request, 'details.html' , {'posts' : posts })
 
 
