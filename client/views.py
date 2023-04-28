@@ -87,7 +87,6 @@ def postdetails(request,id):
         return render(request, 'details.html' , {'posts' : posts , 'data' : data })
     return render(request, 'details.html' , {'posts' : posts })
 
-
 def postupdate(request,id):
      if request.user.is_authenticated and request.user.role == "Client":
         posts=AddpostModel.objects.filter(user_id=request.user.id).get(id=id)
